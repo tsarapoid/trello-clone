@@ -8,7 +8,7 @@ interface ColumnProps {
 
 export const Column = ({
   text,
-  children
+  children,
 }: React.PropsWithChildren<ColumnProps>) => {
   return (
     <ColumnContainer>
