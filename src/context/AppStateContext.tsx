@@ -1,4 +1,4 @@
-import React, { createContext } from "react"
+import { createContext } from "react"
 
 const AppStateContext = createContext()
 
@@ -17,7 +17,7 @@ interface List {
   tasks: Task[]
 }
 
-export interface AppState {
+interface AppState {
   lists: List[]
 }
 
@@ -40,3 +40,5 @@ const appData: AppState = {
     },
   ],
 }
+
+export { appData, AppState }

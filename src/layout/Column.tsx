@@ -1,15 +1,12 @@
-import React from "react"
-import { ColumnContainer, ColumnTitle } from "./styles"
-import { AddNewItem } from "./AddNewItem"
+import { PropsWithChildren } from "react"
+import { ColumnContainer, ColumnTitle } from "../styles/styles"
+import { AddNewItem } from "../newitems/AddNewItem"
 
 interface ColumnProps {
   text: string
 }
 
-export const Column = ({
-  text,
-  children,
-}: React.PropsWithChildren<ColumnProps>) => {
+export const Column = ({ text, children }: PropsWithChildren<ColumnProps>) => {
   return (
     <ColumnContainer>
       <ColumnTitle>{text}</ColumnTitle>

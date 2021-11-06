@@ -1,7 +1,7 @@
-import { Column } from "./Column"
-import { Card } from "./Card"
-import { AppContainer } from "./styles"
-import { AddNewItem } from "./AddNewItem"
+import { Column } from "./layout/Column"
+import { Card } from "./layout/Card"
+import { AppContainer } from "./styles/styles"
+import { AddNewItem } from "./newitems/AddNewItem"
 
 const App = () => {
   return (
