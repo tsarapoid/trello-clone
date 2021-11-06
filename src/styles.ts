@@ -43,7 +43,7 @@ export const AddItemButton = styled.button<AddItemButtonProps>`
   background-color: #ffffff3d;
   border-radius: 3px;
   border: none;
-  color: ${props => (props.dark ? "#000" : "#fff")};
+  color: ${(props) => (props.dark ? "#000" : "#fff")};
   cursor: pointer;
   max-width: 300px;
   padding: 10px 12px;
@@ -66,7 +66,7 @@ export const NewItemFormContainer = styled.div`
 export const NewItemInput = styled.input`
   border-radius: 3px;
   border: none;
-  box-shadow: #091e4240 0px 1px 0px 0px; 
+  box-shadow: #091e4240 0px 1px 0px 0px;
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   width: 100%;
