@@ -1,12 +1,14 @@
-import { PropsWithChildren } from "react"
+import { ReactNode } from "react"
 import { ColumnContainer, ColumnTitle } from "../styles/styles"
 import { AddNewItem } from "../newitems/AddNewItem"
 
-interface ColumnProps {
+type ColumnProps = {
   text: string
+  children?: ReactNode
 }
 
-export const Column = ({ text, children }: PropsWithChildren<ColumnProps>) => {
+// const Column = ({ text, children }: PropsWithChildren<ColumnProps>) => {
+const Column = ({ text, children }: ColumnProps) => {
   return (
     <ColumnContainer>
       <ColumnTitle>{text}</ColumnTitle>
@@ -19,3 +21,5 @@ export const Column = ({ text, children }: PropsWithChildren<ColumnProps>) => {
     </ColumnContainer>
   )
 }
+
+export { Column }

@@ -6,11 +6,11 @@ import {
   NewItemInput,
 } from "../styles/styles"
 
-interface NewItemFormProps {
+type NewItemFormProps = {
   onAdd(text: string): void
 }
 
-export const NewItemForm = ({ onAdd }: NewItemFormProps) => {
+const NewItemForm = ({ onAdd }: NewItemFormProps) => {
   const [text, setText] = useState("")
   const inputRef = useFocus()
 
@@ -25,10 +25,12 @@ export const NewItemForm = ({ onAdd }: NewItemFormProps) => {
       <NewItemInput
         ref={inputRef}
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(event) => setText(event.target.value)}
         onKeyPress={handleAddText}
       />
       <NewItemButton onClick={() => onAdd(text)}>Create</NewItemButton>
     </NewItemFormContainer>
   )
 }
+
+export { NewItemForm }
