@@ -1,0 +1,12 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql"
+  ],
+  "editor.formatOnSave": true,
+  "cSpell.words": ["Popconfirm"],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
