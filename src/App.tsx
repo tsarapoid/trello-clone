@@ -2,13 +2,12 @@ import { Column } from "./layout/Column"
 // import { Card } from "./layout/Card"
 import { AppContainer } from "./styles/styles"
 import { AddNewItem } from "./newitems/AddNewItem"
-import { AppStateProvider, useAppState } from "./state/AppStateContext"
+import { useAppState } from "./state/AppStateContext"
 
 export const App = () => {
   const { lists } = useAppState()
 
   return (
-    // <AppStateProvider>
     <AppContainer>
       {lists.map((list) => {
         const { id, text } = list
@@ -26,6 +25,5 @@ export const App = () => {
         </Column> */}
       <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
-    // </AppStateProvider>
   )
 }
