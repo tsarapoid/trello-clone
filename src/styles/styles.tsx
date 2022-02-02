@@ -35,7 +35,7 @@ export const CardContainer = styled.div`
   box-shadow: #091e4240 0px 1px 0px 0px;
 `
 
-interface AddItemButtonProps {
+type AddItemButtonProps = {
   dark?: boolean
 }
 

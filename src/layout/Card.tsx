@@ -1,6 +1,6 @@
 import { CardContainer } from "../styles/styles"
 
-interface CardProps {
+type CardProps = {
   text: string
 }
 

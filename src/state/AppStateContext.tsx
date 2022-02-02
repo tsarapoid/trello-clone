@@ -1,4 +1,4 @@
-import { createContext, useContext, FC } from "react"
+import { createContext, useContext, ReactNode } from "react"
 
 type Task = {
   id: string
@@ -15,6 +15,41 @@ export type AppState = {
   lists: List[]
 }
 
+const appData: AppState = {
+  lists: [
+    {
+      id: "0",
+      text: "To Do",
+      tasks: [
+        {
+          id: "c0",
+          text: "Generate app scaffold",
+        },
+      ],
+    },
+    {
+      id: "1",
+      text: "In Progress",
+      tasks: [
+        {
+          id: "c2",
+          text: "Learn Typescript",
+        },
+      ],
+    },
+    {
+      id: "2",
+      text: "Done",
+      tasks: [
+        {
+          id: "c3",
+          text: "Begin to use static typing",
+        },
+      ],
+    },
+  ],
+}
+
 type AppStateContextProps = {
   lists: List[]
   getTasksByListId(id: string): Task[]
@@ -24,27 +59,11 @@ const AppStateContext = createContext<AppStateContextProps>(
   {} as AppStateContextProps
 )
 
-const appData: AppState = {
-  lists: [
-    {
-      id: "0",
-      text: "To Do",
-      tasks: [{ id: "c0", text: "Generate app scaffold" }],
-    },
-    {
-      id: "1",
-      text: "In Progress",
-      tasks: [{ id: "c2", text: "Learn Typescript" }],
-    },
-    {
-      id: "2",
-      text: "Done",
-      tasks: [{ id: "c3", text: "Begin to use static typing" }],
-    },
-  ],
+type AppStateProviderPops = {
+  children?: ReactNode
 }
 
-export const AppStateProvider: FC = ({ children }) => {
+export const AppStateProvider = ({ children }: AppStateProviderPops) => {
   const { lists } = appData
 
   const getTasksByListId = (id: string) => {

@@ -6,7 +6,7 @@ import {
   NewItemInput,
 } from "../styles/styles"
 
-interface NewItemFormProps {
+type NewItemFormProps = {
   onAdd(text: string): void
 }
 

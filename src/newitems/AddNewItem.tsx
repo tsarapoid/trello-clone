@@ -2,7 +2,7 @@ import { useState } from "react"
 import { AddItemButton } from "../styles/styles"
 import { NewItemForm } from "./NewItemForm"
 
-interface AddNewItemProps {
+type AddNewItemProps = {
   onAdd(text: string): void
   toggleButtonText: string
   dark?: boolean
