@@ -6,11 +6,11 @@ import {
   NewItemInput,
 } from "../styles/styles"
 
-type NewItemFormProps = {
+interface NewItemFormProps {
   onAdd(text: string): void
 }
 
-const NewItemForm = ({ onAdd }: NewItemFormProps) => {
+export const NewItemForm = ({ onAdd }: NewItemFormProps) => {
   const [text, setText] = useState("")
   const inputRef = useFocus()
 
@@ -32,5 +32,3 @@ const NewItemForm = ({ onAdd }: NewItemFormProps) => {
     </NewItemFormContainer>
   )
 }
-
-export { NewItemForm }

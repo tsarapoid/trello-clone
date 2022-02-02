@@ -3,7 +3,7 @@ import { Card } from "./layout/Card"
 import { AppContainer } from "./styles/styles"
 import { AddNewItem } from "./newitems/AddNewItem"
 
-const App = () => {
+export const App = () => {
   return (
     <AppContainer>
       <Column text="To Do">
@@ -19,5 +19,3 @@ const App = () => {
     </AppContainer>
   )
 }
-
-export { App }
