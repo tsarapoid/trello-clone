@@ -1,0 +1,6 @@
+// not engaged at the moment
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "lib", "dist"],
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+}

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    //"plugins": [{ "name": "typescript-styled-plugin" }],
+    "plugins": [{ "name": "typescript-styled-plugin" }],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -19,6 +19,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["./src", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
