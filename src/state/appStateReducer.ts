@@ -1,6 +1,7 @@
 import { nanoid as nanoID } from "nanoid"
 
 import type { Action } from "./actions"
+import { findItemIndexById } from "../utils/arrayUtils"
 
 export type Task = {
   id: string
@@ -28,6 +29,16 @@ export const appStateReducer = (
         id: nanoID(),
         text: action.payload,
         tasks: [],
+      })
+      break
+    }
+
+    case "ADD_TASK": {
+      const { text, listId } = action.payload
+      const targetListIndex = findItemIndexById(draft.lists, listId)
+      draft.lists[targetListIndex].tasks.push({
+        id: nanoID(),
+        text,
       })
       break
     }
