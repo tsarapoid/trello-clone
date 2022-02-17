@@ -1,13 +1,14 @@
 type Item = {
-  id: string
+  id: /*?*/ string
+  // text: string
 }
 
 export const findItemIndexById = <TItem extends Item>(
   items: TItem[],
-  id: string
+  ids: string
 ) => {
-  return items.findIndex((item: TItem) => item.id === id)
+  return items.findIndex((item: TItem) => item.id === ids)
 }
 
-const itemsWithoutId = [{ text: "test" }]
-findItemIndexById(itemsWithoutId, "testId")
+// const itemsWithoutId = [{ text: "test" }]
+// findItemIndexById(itemsWithoutId, "testId")

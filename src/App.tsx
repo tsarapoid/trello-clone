@@ -3,9 +3,10 @@ import { Column } from "./layout/Column"
 import { AppContainer } from "./styles/styles"
 import { AddNewItem } from "./newitems/AddNewItem"
 import { useAppState } from "./state/AppStateContext"
+import { addList } from "./state/actions"
 
 export const App = () => {
-  const { lists } = useAppState()
+  const { lists, dispatch } = useAppState()
 
   return (
     <AppContainer>
@@ -23,7 +24,10 @@ export const App = () => {
         <Column text="Done">
           <Card text="Begin to use static typing" />
         </Column> */}
-      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
+      <AddNewItem
+        toggleButtonText="+ Add another list"
+        onAdd={(text) => dispatch(addList(text))}
+      />
     </AppContainer>
   )
 }

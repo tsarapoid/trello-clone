@@ -5,14 +5,14 @@ export type Action =
     }
   | {
       type: "ADD_TASK"
-      payload: { text: string; listId: string }
+      payload: { text: string; listID: string }
     }
 
-export const addTask = (text: string, listId: string): Action => ({
+export const addTask = (text: string, listID: string): Action => ({
   type: "ADD_TASK",
   payload: {
     text,
-    listId,
+    listID,
   },
 })
 
@@ -29,7 +29,7 @@ interface AddListAction {
 
 interface AddTaskAction {
   type: "ADD_LIST"
-  payload: { text: string; listId: string }
+  payload: { text: string; listID: string }
 }
 
 export type Action = AddListAction | AddTaskAction

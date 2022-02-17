@@ -1,6 +1,6 @@
 {
   "name": "trello-clone",
-  "version": "2.0.95",
+  "version": "2.12.83",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -8,14 +8,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clear": "rimraf \"./src/**/__generated__/**/*.*\"",
-    "eslint": "eslint \"src/**/*.{js,jsx,ts,tsx,graphql}\"",
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,graphql}\" --fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eslint": "eslint \"./src/**/*.{js,jsx,ts,tsx,graphql}\"",
+    "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx,graphql}\" --fix"
   },
   "dependencies": {
     "nanoid": "^3.2.0",

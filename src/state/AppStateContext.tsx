@@ -69,6 +69,7 @@ export const AppStateProvider = ({ children }: AppStateProviderProps) => {
   const getTasksByListId = (id: string) => {
     return lists.find((list) => list.id === id)?.tasks || []
   }
+
   return (
     <AppStateContext.Provider value={{ lists, getTasksByListId, dispatch }}>
       {children}

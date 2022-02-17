@@ -34,8 +34,9 @@ export const appStateReducer = (
     }
 
     case "ADD_TASK": {
-      const { text, listId } = action.payload
-      const targetListIndex = findItemIndexById(draft.lists, listId)
+      const { text, listID } = action.payload
+      const targetListIndex = findItemIndexById(draft.lists, listID)
+
       draft.lists[targetListIndex].tasks.push({
         id: nanoID(),
         text,
