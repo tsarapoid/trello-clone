@@ -4,7 +4,7 @@ import { useImmerReducer } from "use-immer"
 
 import type { AppState, List, Task } from "./appStateReducer"
 import { appStateReducer } from "./appStateReducer"
-import { Action } from "./actions"
+import { Action } from "../types/Actions"
 
 const appData: AppState = {
   lists: [

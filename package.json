@@ -1,6 +1,6 @@
 {
   "name": "trello-clone",
-  "version": "2.12.83",
+  "version": "2.12.88",
   "private": true,
   "scripts": {
     "start": "react-scripts start",

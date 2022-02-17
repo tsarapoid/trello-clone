@@ -3,7 +3,7 @@ import { ColumnContainer, ColumnTitle } from "../styles/styles"
 import { AddNewItem } from "../newitems/AddNewItem"
 import { useAppState } from "../state/AppStateContext"
 import { Card } from "./Card"
-import { addTask } from "../state/actions"
+import { addTask } from "../types/Actions"
 
 type ColumnProps = {
   id: string

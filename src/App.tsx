@@ -3,7 +3,7 @@ import { Column } from "./layout/Column"
 import { AppContainer } from "./styles/styles"
 import { AddNewItem } from "./newitems/AddNewItem"
 import { useAppState } from "./state/AppStateContext"
-import { addList } from "./state/actions"
+import { addList } from "./types/Actions"
 
 export const App = () => {
   const { lists, dispatch } = useAppState()
