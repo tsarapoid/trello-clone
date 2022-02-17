@@ -5,21 +5,15 @@ export type Action =
     }
   | {
       type: "ADD_TASK"
-      payload: { text: string; listID: string }
+      payload: { text: string; listId: string }
     }
-
-export const addTask = (text: string, listID: string): Action => ({
-  type: "ADD_TASK",
-  payload: {
-    text,
-    listID,
-  },
-})
-
-export const addList = (text: string): Action => ({
-  type: "ADD_LIST",
-  payload: text,
-})
+  | {
+      type: "MOVE_LIST"
+      payload: {
+        draggedId: string
+        hoverId: string
+      }
+    }
 
 /*
 interface AddListAction {
@@ -29,8 +23,29 @@ interface AddListAction {
 
 interface AddTaskAction {
   type: "ADD_LIST"
-  payload: { text: string; listID: string }
+  payload: { text: string; listId: string }
 }
 
 export type Action = AddListAction | AddTaskAction
 */
+
+export const addTask = (text: string, listId: string): Action => ({
+  type: "ADD_TASK",
+  payload: {
+    text,
+    listId,
+  },
+})
+
+export const addList = (text: string): Action => ({
+  type: "ADD_LIST",
+  payload: text,
+})
+
+export const moveList = (draggedId: string, hoverId: string): Action => ({
+  type: "MOVE_LIST",
+  payload: {
+    draggedId,
+    hoverId,
+  },
+})

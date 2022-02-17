@@ -1,7 +1,7 @@
-import { nanoid as nanoID } from "nanoid"
+import { nanoid as nanoId } from "nanoid"
 
 import type { Action } from "./actions"
-import { findItemIndexById } from "../utils/arrayUtils"
+import { findItemIndexById, moveItem } from "../utils/arrayUtils"
 
 export type Task = {
   id: string
@@ -26,7 +26,7 @@ export const appStateReducer = (
     //
     case "ADD_LIST": {
       draft.lists.push({
-        id: nanoID(),
+        id: nanoId(),
         text: action.payload,
         tasks: [],
       })
@@ -34,17 +34,22 @@ export const appStateReducer = (
     }
 
     case "ADD_TASK": {
-      const { text, listID } = action.payload
-      const targetListIndex = findItemIndexById(draft.lists, listID)
-
+      const { text, listId } = action.payload
+      const targetListIndex = findItemIndexById(draft.lists, listId)
       draft.lists[targetListIndex].tasks.push({
-        id: nanoID(),
+        id: nanoId(),
         text,
       })
       break
     }
 
-    // ...
+    case "MOVE_LIST": {
+      const { draggedId, hoverId } = action.payload
+      const dragIndex = findItemIndexById(draft.lists, draggedId)
+      const hoverIndex = findItemIndexById(draft.lists, hoverId)
+      draft.lists = moveItem(draft.lists, dragIndex, hoverIndex)
+      break
+    }
 
     default: {
       break
@@ -60,7 +65,7 @@ export const appStateReducer = (state: AppState, action: Action): AppState => {
         ...state,
         lists: [
           ...state.lists,
-          { id: nanoID(), text: action.payload, tasks: [] },
+          { id: nanoId(), text: action.payload, tasks: [] },
         ],
       }
     }
